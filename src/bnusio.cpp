@@ -299,27 +299,7 @@ HOOK (u64, bngrw_reqWaitTouch, PROC_ADDRESS ("bngrw.dll", "BngRwReqWaitTouch"), 
 
 void
 Init () {
-	INSTALL_HOOK (bngrw_DevReset);
-	INSTALL_HOOK (bngrw_ReadMifare);
-	INSTALL_HOOK (bngrw_fin);
-	INSTALL_HOOK (bngrw_GetFwVersion);
-	INSTALL_HOOK (bngrw_GetStationID);
-	INSTALL_HOOK (bngrw_GetRetryCount);
-	INSTALL_HOOK (bngrw_IsCmdExec);
-	INSTALL_HOOK (bngrw_ReqAction);
-	INSTALL_HOOK (bngrw_ReqAiccAuth);
-	INSTALL_HOOK (bngrw_ReqBeep);
-	INSTALL_HOOK (bngrw_ReqFwCleanup);
-	INSTALL_HOOK (bngrw_ReqFwVersionUp);
-	INSTALL_HOOK (bngrw_ReqLatchID);
-	INSTALL_HOOK (bngrw_ReqLed);
-	INSTALL_HOOK (bngrw_ReqSendMail);
-	INSTALL_HOOK (bngrw_ReqSendUrl);
-	INSTALL_HOOK (bngrw_ReqSetLedPower);
-	INSTALL_HOOK (bngrw_reqCancel);
-	INSTALL_HOOK (bngrw_Init)
-	INSTALL_HOOK (bngrw_attach);
-	INSTALL_HOOK (bngrw_reqWaitTouch);
+
 
 	auto configPath = std::filesystem::current_path () / "config.toml";
 	std::unique_ptr<toml_table_t, void (*) (toml_table_t *)> config_ptr (openConfig (configPath), toml_free);
